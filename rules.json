@@ -1,0 +1,65 @@
+{
+  "conditions": [
+    {
+      "id": "hot",
+      "label": "Hot",
+      "tempMin": 30,
+      "tempMax": 99,
+      "items": ["Singlet or tshirt", "Shorts", "Sandals"],
+      "message": "Really hot today, keep it light and breathable.",
+      "bgColor": "#FEF3C7"
+    },
+    {
+      "id": "warm",
+      "label": "Warm",
+      "tempMin": 24,
+      "tempMax": 29,
+      "items": ["Tshirt", "Shorts or light pants", "Casual shoes"],
+      "message": "Just warm out there, smart to keep it casual.",
+      "bgColor": "#FEFCE8"
+    },
+    {
+      "id": "mild",
+      "label": "Mild",
+      "tempMin": 18,
+      "tempMax": 23,
+      "items": ["Light shirt or tee", "Jeans", "Casual shoes"],
+      "message": "Beautiful weather, a solid tshirt and jeans will do.",
+      "bgColor": "#EFF6FF"
+    },
+    {
+      "id": "cool",
+      "label": "Cool",
+      "tempMin": 12,
+      "tempMax": 17,
+      "items": ["Jumper or hoodie", "Jeans", "Closed shoes"],
+      "message": "Is it Jumper weather ? 100%, its getting chilly.",
+      "bgColor": "#F3F4F6"
+    },
+    {
+      "id": "cold",
+      "label": "Cold",
+      "tempMin": -99,
+      "tempMax": 11,
+      "items": ["Jacket", "Jumper underneath", "Jeans", "Warm shoes"],
+      "message": "Freezing out there, layer up with a proper jacket.",
+      "bgColor": "#EEF2FF"
+    }
+  ],
+  "modifiers": [
+    {
+      "id": "rain",
+      "hint": "🌧  Pouring down out there, would be smart to grab an umbrella",
+      "extraItem": "Umbrella"
+    },
+    {
+      "id": "highWind",
+      "threshold": 30,
+      "hint": "💨 Strong breeze today, a windbreaker is ideal"
+    },
+    {
+      "id": "highUV",
+      "hint": "☀️ UV is high today, make sure to put a hat on and some sunscreen"
+    }
+  ]
+}

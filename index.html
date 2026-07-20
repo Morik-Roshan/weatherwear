@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>WeatherWear — what to wear, based on live weather</title>
+  <meta name="description" content="WeatherWear checks the live weather where you are and shows you what to wear — with a customisable character, animated scenes, and a 3-day outfit forecast.">
+  <meta name="theme-color" content="#EFF6FF">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤</text></svg>">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WeatherWear — what to wear, based on live weather">
+  <meta property="og:description" content="Live weather in, outfit out. A customisable character dresses for your local conditions, with animated scenes and a 3-day forecast.">
+  <meta property="og:image" content="https://YOUR-SITE-NAME.netlify.app/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <header id="top-bar">
+      <div id="top-left">
+        <button id="settings-button" type="button" aria-label="Settings">⚙</button>
+        <span id="app-name">weatherwear</span>
+      </div>
+      <button id="city-button" type="button">
+        <span id="city-name"></span>
+        <span id="city-icon">🔍</span>
+      </button>
+    </header>
+
+    <div id="search-box">
+      <input id="search-input" type="text" placeholder="Try 'Sydney' or 'London'..." autocomplete="off">
+      <button id="search-cancel" type="button">Cancel</button>
+    </div>
+
+    <div id="settings-panel">
+      <div class="settings-section">
+        <div class="settings-label">Skin tone</div>
+        <div id="skin-swatches"></div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-label">Hair style</div>
+        <div id="hair-styles"></div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-label">Hair colour</div>
+        <div id="hair-colors"></div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-label">Outfit palette</div>
+        <div id="outfit-palettes"></div>
+      </div>
+    </div>
+
+    <div id="character-card">
+      <div id="scene"></div>
+      <div id="ground"></div>
+      <svg id="character-svg" viewBox="0 -18 105 163" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle id="char-head" cx="50" cy="28" r="16" fill="#F5CBA7"/>
+        <circle cx="44" cy="26" r="2.2" fill="#5D4037"/>
+        <circle cx="56" cy="26" r="2.2" fill="#5D4037"/>
+        <path d="M44 33 Q50 38 56 33" stroke="#5D4037" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <g id="char-body"></g>
+        <g id="char-hair"></g>
+      </svg>
+    </div>
+
+    <div class="info-card" id="weather-card">
+      <div class="card-header">
+        <span class="card-label" id="weather-card-label">Right now</span>
+        <span id="condition-label">Checking...</span>
+      </div>
+      <div id="temp-display">--</div>
+      <p id="rec-message">Just a sec while we check what's going on outside.</p>
+    </div>
+
+    <div class="info-card" id="clothing-card">
+      <div class="card-header">
+        <span class="card-label">Wear this</span>
+      </div>
+      <div id="clothing-tags"></div>
+      <p id="hint"></p>
+    </div>
+
+    <div id="weather-stats">
+      <div class="stat">
+        <span class="stat-label">feels like</span>
+        <span class="stat-value" id="stat-feels">--</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">wind</span>
+        <span class="stat-value" id="stat-wind">--</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">conditions</span>
+        <span class="stat-value" id="stat-conditions">--</span>
+      </div>
+    </div>
+
+    <div id="forecast-strip">
+      <div class="forecast-label">Next 3 days</div>
+      <div id="forecast-days"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
